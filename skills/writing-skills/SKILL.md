@@ -78,6 +78,22 @@ of equal options.
 
 ## Structure
 
+Skills here share a spine, not a template. The middle takes the shape of the
+task — steps for a workflow, a format and examples for a document, rules for a
+review — and only these four pieces are fixed:
+
+```
+frontmatter      name in gerund form, description in third person
+# Title
+opening          one paragraph: what it produces and when it applies
+## ...           the middle, shaped by the task
+## Guardrails    what is never done, and who decides
+## Before finishing   a short checklist, so nothing is declared done early
+```
+
+Don't add a section to fill it. A skill with no configuration has no Config
+section; empty headings cost tokens and teach the reader to skim.
+
 - Keep `SKILL.md` under 500 lines. Past that, split into sibling files and link
   them from `SKILL.md`.
 - **References one level deep.** Every extra file links directly from `SKILL.md`,
@@ -88,7 +104,7 @@ of equal options.
 - Say explicitly whether a bundled script is to be **run** ("Run `analyze.py` to
   extract fields") or **read** ("See `analyze.py` for the algorithm").
 
-## Content rules
+## Guardrails
 
 - **No time-sensitive statements.** Not "before August, use the old API". Put
   superseded material under an "Old patterns" heading instead.

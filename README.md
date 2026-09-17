@@ -54,6 +54,9 @@ What makes these work, beyond the content:
   skill genuinely depends on it.
 - **Name skills in gerund form** — `refining-estimates`, not `refine-estimate` —
   so the collection stays consistent.
+- **Share a spine, not a template.** Every skill opens with one paragraph saying
+  what it produces, and closes with `## Guardrails` and `## Before finishing`.
+  The middle takes whatever shape the task needs — no empty sections.
 
 The [`writing-skills`](skills/writing-skills) skill encodes all of this: ask for
 it when adding or changing one.

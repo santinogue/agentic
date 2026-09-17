@@ -12,7 +12,7 @@ implemented, or that a "simple change" hides a decision nobody has made.
 
 Write in the language the user is writing in.
 
-## Ground rules
+## Guardrails
 
 **Never estimate from the ticket alone.** Read the code first. Every claim about
 what exists, what is missing, or what something costs carries a `path:line`
@@ -120,3 +120,11 @@ one they pick:
 
 Folded tasks get no section of their own in the write-up; say once which row
 absorbed them.
+
+## Before finishing
+
+- [ ] Every claim about the code carries a `path:line`
+- [ ] No row was marked refined without the user saying so
+- [ ] Each closed task names its open questions, or the default taken instead
+- [ ] Findings outside scope are listed separately, with a cost, not absorbed
+- [ ] The calendar conversion states its assumption

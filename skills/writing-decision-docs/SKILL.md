@@ -47,7 +47,7 @@ data pipeline, where the queries and outputs live. Anything a reader may want
 to audit but nobody needs in order to decide. Keeping this section fat is what
 keeps the other four clean.
 
-## Honesty requirements
+## Guardrails
 
 These are not optional and they are the reason the format works.
 
@@ -101,8 +101,13 @@ metadata (title, folder) — it cannot replace the body. To revise, create a new
 doc and trash the old one with `trash_file` so two versions do not circulate.
 Say that you did it; trashing is reversible.
 
-## Before writing
+## Before finishing
 
 Ask for the destination folder if it matters; otherwise it lands in the root of
 My Drive and can be moved later. If the analysis has an accompanying artifact
 or repo files, list them in the appendix so the doc is not the only trace.
+
+- [ ] The decisions section names who decides, not just what is undecided
+- [ ] Blind spots and limits are stated, not implied
+- [ ] Every figure that changed during the work appears under corrections
+- [ ] The link is handed to the user
