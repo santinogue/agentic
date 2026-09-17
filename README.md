@@ -10,9 +10,10 @@ instructions.
 
 | Skill | What it does |
 |---|---|
-| [`refine-estimate`](skills/refine-estimate) | Refines a rough task list against the real codebase and estimates it one task at a time, keeping a live table with a `refined` column only the user can flip. |
-| [`decision-doc`](skills/decision-doc) | Writes an analysis in a decision-first format — *In one minute, Decisions to be made, Recommendations, How we got here, Appendix* — and publishes it as a Google Doc. |
-| [`core-board-review`](skills/core-board-review) | Reviews a Jira board for project-management health (hygiene, stuck work, unanswered comments, whether the ready queue covers the next two weeks) and sends the summary as a Slack DM. |
+| [`refining-estimates`](skills/refining-estimates) | Refines a rough task list against the real codebase and estimates it one task at a time, keeping a live table with a `refined` column only the user can flip. |
+| [`writing-decision-docs`](skills/writing-decision-docs) | Writes an analysis in a decision-first format — *In one minute, Decisions to be made, Recommendations, How we got here, Appendix* — and publishes it as a Google Doc. |
+| [`reviewing-jira-boards`](skills/reviewing-jira-boards) | Reviews a Jira board for project-management health (hygiene, stuck work, unanswered comments, whether the ready queue covers the next two weeks) and sends the summary as a Slack DM. |
+| [`writing-skills`](skills/writing-skills) | Creates or updates a skill in this repo, following Anthropic's authoring best practices and the conventions below. |
 
 ## Install
 
@@ -21,10 +22,10 @@ you want:
 
 ```bash
 git clone https://github.com/santinogue/agentic.git
-ln -s "$PWD/agentic/skills/refine-estimate" ~/.claude/skills/refine-estimate
+ln -s "$PWD/agentic/skills/refining-estimates" ~/.claude/skills/refining-estimates
 ```
 
-Invoke one by name (`/refine-estimate`) or just describe the task — the
+Invoke one by name (`/refining-estimates`) or just describe the task — the
 `description` in the frontmatter is what makes a skill fire on its own.
 
 ## Configuration and secrets
@@ -51,3 +52,8 @@ What makes these work, beyond the content:
   stop and ask.
 - **Keep it tool-agnostic where you can.** Name a specific tool only where the
   skill genuinely depends on it.
+- **Name skills in gerund form** — `refining-estimates`, not `refine-estimate` —
+  so the collection stays consistent.
+
+The [`writing-skills`](skills/writing-skills) skill encodes all of this: ask for
+it when adding or changing one.

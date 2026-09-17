@@ -1,11 +1,11 @@
 ---
-name: core-board-review
-description: Review the CORE Jira board for project-management health and DM the summary to yourself on Slack. Checks issue hygiene (description, Epic link, acceptance criteria, design links on UI work), flags issues stuck too long in a status, flags tickets with unanswered comments, measures whether the ready queue holds enough work for the next 2 weeks, and reports how effort is distributed against the objectives doc. Use for "review the board", "board health", "board review", "how is CORE doing", "do we have enough work", "what's stuck", or when running the scheduled board check.
+name: reviewing-jira-boards
+description: Reviews a Jira board for project-management health and DMs the summary to the user on Slack. Checks issue hygiene (description, Epic link, acceptance criteria, design links on UI work), flags issues stuck too long in a status, flags tickets with unanswered comments, measures whether the ready queue holds enough work for the next 2 weeks, and reports how effort is distributed against the objectives doc. Use for "review the board", "board health", "board review", "how is CORE doing", "do we have enough work", "what's stuck", or when running the scheduled board check.
 ---
 
-# CORE board review
+# Reviewing a Jira board
 
-Produces a project-management health report on the CORE Jira board and sends it
+Produces a project-management health report on a Jira board and sends it
 to the user as a Slack DM.
 
 ## Config

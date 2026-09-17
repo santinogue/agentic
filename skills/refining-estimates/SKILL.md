@@ -1,6 +1,6 @@
 ---
-name: refine-estimate
-description: Refine a list of tasks against the actual codebase and estimate them one at a time, keeping a live table with a "refined" column that only the user can flip to true. Use for "estimate this work", "help me estimate", "how long would this take", "refinemos estas tareas", "estimar el backlog", "break this ticket down", or whenever a rough task list from a ticket, planning doc or meeting has to become numbers someone will commit to.
+name: refining-estimates
+description: Refines a list of tasks against the actual codebase and estimates them one at a time, keeping a live table with a "refined" column that only the user can flip to true. Use for "estimate this work", "help me estimate", "how long would this take", "refinemos estas tareas", "estimar el backlog", "break this ticket down", or whenever a rough task list from a ticket, planning doc or meeting has to become numbers someone will commit to.
 ---
 
 # Refine and estimate
@@ -115,7 +115,7 @@ one they pick:
 - **An artifact** — three sections: the summary table, implementation detail per
   task (the decisions made during refinement, not a tutorial), and open
   questions at the end with an owner for each.
-- **A decision doc** — invoke the `decision-doc` skill instead.
+- **A decision doc** — invoke the `writing-decision-docs` skill instead.
 - **Nothing** — the table in the terminal is the deliverable.
 
 Folded tasks get no section of their own in the write-up; say once which row

@@ -1,6 +1,6 @@
 ---
-name: decision-doc
-description: Write an analysis or findings document in Santi's decision-doc format — In one minute, Decisions to be made, Recommendations, How we got here, Appendix — and publish it as a Google Doc. Use for "write this up as a doc", "make a doc in Drive", "document this analysis", "write the findings doc", or whenever the result of an investigation has to be handed to other people to act on.
+name: writing-decision-docs
+description: Writes an analysis or findings document in a decision-first format — In one minute, Decisions to be made, Recommendations, How we got here, Appendix — and publish it as a Google Doc. Use for "write this up as a doc", "make a doc in Drive", "document this analysis", "write the findings doc", or whenever the result of an investigation has to be handed to other people to act on.
 ---
 
 # Decision doc
