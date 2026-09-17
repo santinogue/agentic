@@ -1,0 +1,53 @@
+# agentic
+
+Personal playbooks for AI coding agents: reusable procedures I'd otherwise have
+to re-explain every session. Written for [Claude
+Code](https://claude.com/claude-code) skills, but they're plain Markdown — the
+process in each one is portable to any agent that can follow written
+instructions.
+
+## Skills
+
+| Skill | What it does |
+|---|---|
+| [`refine-estimate`](skills/refine-estimate) | Refines a rough task list against the real codebase and estimates it one task at a time, keeping a live table with a `refined` column only the user can flip. |
+| [`decision-doc`](skills/decision-doc) | Writes an analysis in a decision-first format — *In one minute, Decisions to be made, Recommendations, How we got here, Appendix* — and publishes it as a Google Doc. |
+| [`core-board-review`](skills/core-board-review) | Reviews a Jira board for project-management health (hygiene, stuck work, unanswered comments, whether the ready queue covers the next two weeks) and sends the summary as a Slack DM. |
+
+## Install
+
+Skills are picked up from `~/.claude/skills/<name>/SKILL.md`. Symlink the ones
+you want:
+
+```bash
+git clone https://github.com/santinogue/agentic.git
+ln -s "$PWD/agentic/skills/refine-estimate" ~/.claude/skills/refine-estimate
+```
+
+Invoke one by name (`/refine-estimate`) or just describe the task — the
+`description` in the frontmatter is what makes a skill fire on its own.
+
+## Configuration and secrets
+
+Nothing in this repo holds an ID, a URL or a name that isn't mine to publish.
+A skill that needs real values reads them from a `config.local.md` sitting next
+to its `SKILL.md`, which is gitignored; the `SKILL.md` documents the shape and
+the agent asks for anything missing.
+
+Keep it that way when adding a skill: board keys, member IDs, document links and
+colleagues' names belong in the local file, not in the committed one.
+
+## Writing a skill
+
+What makes these work, beyond the content:
+
+- **The `description` is the trigger.** Write it for matching, not for
+  elegance — say what the skill does and list the phrasings that should fire it,
+  including the ones in the language you actually type in.
+- **Instructions, not documentation.** Imperative, addressed to the agent.
+  Describe the process, not the topic.
+- **Encode the judgment, not just the steps.** The reusable part is usually a
+  rule the agent would otherwise get wrong: what not to do, who decides, when to
+  stop and ask.
+- **Keep it tool-agnostic where you can.** Name a specific tool only where the
+  skill genuinely depends on it.
