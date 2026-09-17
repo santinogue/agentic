@@ -13,6 +13,7 @@ instructions.
 | [`refining-estimates`](skills/refining-estimates) | Refines a rough task list against the real codebase and estimates it one task at a time, keeping a live table with a `refined` column only the user can flip. |
 | [`writing-decision-docs`](skills/writing-decision-docs) | Writes an analysis in a decision-first format — *In one minute, Decisions to be made, Recommendations, How we got here, Appendix* — and publishes it as a Google Doc. |
 | [`reviewing-jira-boards`](skills/reviewing-jira-boards) | Reviews a Jira board for project-management health (hygiene, stuck work, unanswered comments, whether the ready queue covers the next two weeks) and sends the summary as a Slack DM. |
+| [`reviewing-pull-requests`](skills/reviewing-pull-requests) | Walks a PR file by file at your pace, drafts inline comments, confirms each one before it exists, and publishes them as a single review in your name. |
 | [`writing-pull-requests`](skills/writing-pull-requests) | Opens and maintains PRs: branch checks, size limits, the `## What` / `## Why` body format, stacking oversized work, and keeping the body current as the branch changes. |
 | [`writing-skills`](skills/writing-skills) | Creates or updates a skill in this repo, following Anthropic's authoring best practices and the conventions below. |
 
