@@ -106,6 +106,16 @@ for everything by accident.
 **Filters are arguments, not separate fields.** One `items(filter: …)` beats
 `sharedItems`, `recentItems` and `myItems` as three fields that diverge.
 
+**A `filter` input belongs to connections.** It travels with `orderBy` and
+pagination and promises that the field can be queried along any of its
+properties. A lookup that returns a bounded, unpaginated list (the admins of an
+organization, the stats for a subscription) takes its scope as a plain argument,
+`orgAdmins(organizationID: ID)`, not a one-property input object. Wrapping it
+would promise filtering and sorting the resolver cannot deliver, and the scalar
+can coexist with a `filter` argument later if the field ever becomes a
+connection. When a client needs to search or page that set, point it at the
+existing connection for the entity with a new filter property instead.
+
 **Watch what a field costs to resolve.** A field that triggers a query per
 parent needs batching; a field backed by a huge column needs an explicit
 projection so a page of results doesn't load megabytes nobody asked for.
@@ -136,7 +146,8 @@ handing a schema over, because they change what the schema needs to support:
   can carry it.
 - Don't invent a second type for an entity that already exists in the schema.
 - Don't add a field whose semantics are still undecided — an unimplemented field
-  in a published schema is worse than a later additive change.
+  in a published schema is worse than a later additive change. Design from a
+  client's concrete need, never from what the schema "might" want later.
 
 ## Before finishing
 
@@ -148,3 +159,25 @@ handing a schema over, because they change what the schema needs to support:
 - [ ] Capability fields cover every rule a client would otherwise re-derive
 - [ ] Nothing published is removed, renamed or retyped
 - [ ] The SDL was handed to the client developers before the resolvers were built
+
+## Sources
+
+The rules above summarize these; cite them when a design choice is challenged.
+
+- [GraphQL Cursor Connections Specification](https://relay.dev/graphql/connections.htm)
+  — `edges`/`node`/`pageInfo`, `first`/`after`/`last`/`before`. It deliberately
+  leaves ordering and filtering to "additional arguments", so `filter`/`orderBy`
+  are conventions, not spec.
+- [Relay Global Object Identification](https://relay.dev/graphql/objectidentification.htm)
+  — the `Node` interface and opaque global ids.
+- [Apollo: demand-oriented schema design](https://www.apollographql.com/docs/graphos/schema-design/guides/demand-oriented-schema-design)
+  — design fields around specific client use cases; don't expose what no client
+  asked for.
+- [Principled GraphQL](https://principledgraphql.com) — the Agility principle:
+  build the schema incrementally from real requirements; the schema is an
+  abstraction over services, not a mirror of them.
+- [Shopify GraphQL design tutorial](https://github.com/Shopify/graphql-design-tutorial)
+  — one input/payload per mutation, `userErrors`, model business meaning not
+  tables, removing a field is far harder than adding one.
+- [Apollo: operation best practices](https://www.apollographql.com/docs/react/data/operation-best-practices)
+  — named operations, variables over literals, fragments per component.
