@@ -16,6 +16,7 @@ instructions.
 | [`designing-graphql-schemas`](skills/designing-graphql-schemas) | Designs GraphQL schema additions following Relay conventions and Apollo's operation best practices, so the shape works for the clients that consume it. |
 | [`reviewing-pull-requests`](skills/reviewing-pull-requests) | Walks a PR file by file at your pace, drafts inline comments, confirms each one before it exists, and publishes them as a single review in your name. |
 | [`writing-pull-requests`](skills/writing-pull-requests) | Opens and maintains PRs: branch checks, size limits, the `## What` / `## Why` body format, stacking oversized work, and keeping the body current as the branch changes. |
+| [`revising-requirements-docs`](skills/revising-requirements-docs) | Records a team decision in a living requirements Google Doc: one tab per revision, sentences rewritten in place with a dated note, the decision logged in its Decisions section, older tabs frozen. |
 | [`writing-skills`](skills/writing-skills) | Creates or updates a skill in this repo, following Anthropic's authoring best practices and the conventions below. |
 
 ## Install
